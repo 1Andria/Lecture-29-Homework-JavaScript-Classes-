@@ -195,9 +195,17 @@ class Task {
     this.completed = completed;
     this.priority = priority;
   }
-  toggleCompleted() {}
+  toggleCompleted() {
+    this.completed = !this.completed;
+  }
+  static filterByPriority(tasks, priority) {
+    if (priority === "პრივილირიგებული") {
+      console.log(`თასქი სახელად ${tasks} არის ${priority}  `);
+    }
+  }
 }
-
+Task.filterByPriority("ოპერაცია", "პრივილირიგებული");
+Task.filterByPriority("ჩალუპვა", "არაპრივილირიგებული");
 // 10. შექმენი კლასი Appointment, რომელსაც ექნება title და date ატრიბუტები. დაამატე მეთოდი isToday(), რომელიც დააბრუნებს true, თუ ღონისძიება დღეს უნდა გაიმართოს და false, წინააღმდეგ შემთხვევაში.
 
 class Appointment {
